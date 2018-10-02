@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+  </head>
+  <style>
+   
+   
+   body{
+     background-color:white;
+   }
+   h1{
+     color:darkslategrey; font: size =10px; text-align: center;
+   }
+
+   h2{
+     text-align: center;
+   }
+  
+  </style>
+<body>
+
+
+  <p1 id="invalid_1"></p1>
+  <p1 id="invalid_2"></p1>
+  <p1 id="invalid_3"></p1>
+  <p1 id="invalid_4"></p1>
+  <p1 id="invalid_5"></p1>
+
+<div >
+    <h1 ><span class="label label-info">Registration Form</span></h1><br><br>
+<form class="form-horizontal">
+    <div class="form-group row">
+      <div class="form-group ">
+        <h3><label class="control-label col-sm-5" for="firstName"><span class="label label-primary"> First Name</span></label></h3>
+      
+        <div  class="col-xs-3">
+           <input type="text"  class="form-control" id="firstName" placeholder="enter first name" />
+        </div>
+      </div>
+      <div class="form-group">
+          <h3><label class="control-label col-sm-5" for="LastName"><span class="label label-primary"> Last Name</span></label></h3>
+        
+          <div class="col-xs-3" >
+             <input type="text"  class="form-control" id="lastName"  placeholder="enter last name"/>
+          </div>
+        </div>
+    
+        <div class="form-group">
+            <h3><label class="control-label col-sm-5" for="age"><span class="label label-primary"> Age </span></label></h3>
+          
+            <div class="col-xs-3" >
+               <input type="text"  class="form-control" id="age" size="15" placeholder="enter age"/>
+            </div>
+          </div>
+    
+          <div class="form-group">
+              <h3><label class="control-label col-sm-5" for="email"><span class="label label-primary"> Email </span></label></h3>
+            
+              <div class="col-xs-3" >
+                 <input type="text"  class="form-control" id="age" size="15" placeholder="enter email"/>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <h3><label class="control-label col-sm-5" for="email"><span  class="label label-primary">Password</span></label></h3>
+            
+              <div class="col-xs-3" >
+                 <input type="text"  class="form-control" id="password" size="15" placeholder="enter password"/>
+              </div>
+          </div>
+    
+        <div class="form-group">
+          <h3><label class="control-label col-sm-5"><span class="label label-primary">Gender</span></label></h3>
+          <div class="radio">
+              <h4><label class="control-label col-sm-1"><input type="radio"   name="optradio" checked /><span class="label label-default"> Male</span></label></h4>
+       
+              <h4><label class="control-label col-sm-1"><input type="radio"   name="optradio"  /><span class="label label-default"> Female</span></label></h4>
+          </div>
+        </div>
+
+      <div class="form-group">
+          <h3><label class="control-label col-sm-5"><span class="label label-primary">Skills</span></label></h3>
+        <div class="checkbox">
+            <h4><label class="control-label col-sm-1"><input type="checkbox" value=""><span class="label label-default">Java</span></label></h4>
+            <h4><label class="control-label col-sm-1"><input type="checkbox" value=""><span class="label label-default">C++</span></label></h4>
+            <h4><label class="control-label col-sm-1"><input type="checkbox" value=""><span class="label label-default">Scala</span></label></h4>
+        </div>
+      </div>
+  <div class="form-group">  
+    <h3><label class="control-label col-sm-5"><span class="label label-primary">Education</span></label></h3>
+    <label><select class="form-control" id="sel">
+       <div class="dropdown">
+        <option>BE</option>
+        <option>MCA</option>
+        <option>BCA</option>
+        <option>BTech</option>
+      </div>
+    </select></label>
+  </div>
+</div> 
+  <div class="form-group">
+    <label class="control-label col-sm-6"><button type="button" class="btn btn-success">Submit</button></label>
+  </div>
+      </form>
+    </div>
+<script>
+
+ var Invalid=0;
+  
+  function validate()
+  {
+     Invalid=0;
+   
+
+   // For First Name
+   if(document.getElementById("firtsName").value=="")
+   {
+     document.getElementById("invalid_1").value.innerHTML="You must type firstName";
+     Invalid+=1;
+   }
+   else{
+    document.getElementById("invalid_1").value.innerHTML="";
+   }
+    
+    
+
+   // For Last Name
+   if(document.getElementById("lastName").value=="")
+   {
+     document.getElementById("invalid_2").value.innerHTML="You must type LastName";
+     Invalid+=1;
+   }
+   else{
+    document.getElementById("invalid_2").value.innerHTML="";
+   }
+    
+   //For Age
+
+
+
+   // For Email
+
+     if(document.getElementById("email").value.indexOf("@")==-1 )
+     {
+      document.getElementById("invalid_4").value.innerHTML="Invalid Email";
+     Invalid+=1;
+     }
+    else{
+      document.getElementById("invalid_4").value.innerHTML="";
+    }
+
+    if(Invalid!=0)
+    {
+      return false;
+    }
+   else{
+     return true;
+   }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+    
+    /*function validateLetters()
+  {
+    var firstName ,lastName, age, Email;
+    
+    firstName=document.getElementById("firstName").innerHTML;
+    lastName=document.getElementById("lastName").innerHTML;
+    age=document.getElementById("age").innerHTML;
+    Email=document.getElementById("email").innerHTML;
+    
+    var letters=/^[A-Za-z\s]+$/;
+    if(firstName.match(letters))
+    {
+      return true;
+    }
+    else
+    {   
+      alert("Invalid Character");
+      return false;
+    }
+     
+     if(lastName.match("/^[A-Za-z\s]+$/"))
+    {
+      return true;
+    }
+    else
+    {
+      alert("Invalid Character");
+      return false;
+    }
+    
+  
+    
+    
+  }
+  
+  */  
+  
+    
+    
+  
+    
+  
+  
+</script>
+
+</body>
+</html>
